@@ -15,24 +15,24 @@ import com.colegio.entity.Curso;
 import com.colegio.service.CursoService;
 
 @RestController
-@RequestMapping("/api/rest/curso")
+@RequestMapping("/api/rest/curso/")
 public class CursoController {
 	
 	
 	@Autowired
 	private CursoService service;
 	
-	@PostMapping("/")
+	@PostMapping
 	public ResponseEntity<Curso> inserta(@RequestBody Curso obj){
 		return ResponseEntity.ok(service.inserta(obj));
 	}
 	
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<List<Curso>> lista() {
 		return ResponseEntity.ok(service.listaCursos());
 	}
 	
-	@GetMapping("/porNombre/{filtro}")
+	@GetMapping("porNombre/{filtro}")
 	public ResponseEntity<List<Curso>> listaPorNombre(@PathVariable String filtro){
 		return ResponseEntity.ok(service.listaCursoPorNombre(filtro));
 	}

@@ -11,7 +11,7 @@ import com.colegio.entity.Curso;
 public interface CursoRepository extends JpaRepository<Curso, Integer>{
 	
 	
-	@Query("select x from curso x where x.nombre = :var_filtro")
+	@Query("select x from Curso x where x.nombre = :var_filtro")
 	public List<Curso> listaPorNombre(@Param("var_filtro") String filtro);
 	
 

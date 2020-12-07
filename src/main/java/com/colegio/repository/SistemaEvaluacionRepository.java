@@ -14,7 +14,7 @@ import com.colegio.entity.SistemaEvaluacion;
 public interface SistemaEvaluacionRepository extends JpaRepository<SistemaEvaluacion, Integer>{
 	
 	
-	@Query("select x from sistemaevaluacion x where x.nombre = :var_filtro")
+	@Query("select x from SistemaEvaluacion x where x.nombre = :var_filtro")
 	public List<SistemaEvaluacion> listaPorNombre(@Param("var_filtro") String filtro);
 
 }
