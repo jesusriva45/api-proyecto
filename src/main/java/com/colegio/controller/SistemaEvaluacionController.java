@@ -14,18 +14,18 @@ import com.colegio.service.SistemaEvaluacionService;
 
 
 @RestController
-@RequestMapping("/api/rest/sistemaevaluacion/")
+@RequestMapping("/api/rest/sistemaevaluacion")
 public class SistemaEvaluacionController {
 	
 	@Autowired
 	private SistemaEvaluacionService service;
 	
-	@GetMapping
+	@GetMapping("/")
 	public ResponseEntity<List<SistemaEvaluacion>> lista() {
 		return ResponseEntity.ok(service.listaSistemaEvaluacion());
 	}
 	
-	@GetMapping("porNombre/{filtro}")
+	@GetMapping("/porNombre/{filtro}")
 	public ResponseEntity<List<SistemaEvaluacion>> listaPorNombre(@PathVariable String filtro){
 		return ResponseEntity.ok(service.listaSistemaEvaluacionPorNombre(filtro));
 	}
